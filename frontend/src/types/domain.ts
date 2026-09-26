@@ -81,3 +81,43 @@ export interface Overview {
   messages: Conversation[];
   profile: Profile;
 }
+
+export type CoachingRole = 'mentor' | 'learner';
+
+export type CoachingTaskStatus = 'todo' | 'submitted' | 'approved' | 'rejected';
+
+export interface TaskSubmission {
+  note: string;
+  link: string;
+  submittedAt: string;
+}
+
+export interface CoachingTask {
+  id: number;
+  appointmentId: number;
+  title: string;
+  requirement: string;
+  status: CoachingTaskStatus;
+  submission?: TaskSubmission;
+  rejectReason?: string;
+}
+
+export interface CoachingAppointment {
+  id: number;
+  mentor: string;
+  learner: string;
+  skill: string;
+  time: string;
+  place: string;
+  closed: boolean;
+  closedAt?: string;
+  tasks: CoachingTask[];
+}
+
+export interface SkillWallEntry {
+  user: string;
+  skill: string;
+  partner: string;
+  note: string;
+  closedAt: string;
+}

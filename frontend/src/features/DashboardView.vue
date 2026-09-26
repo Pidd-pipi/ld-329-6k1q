@@ -45,6 +45,8 @@
         </FeatureCard>
       </div>
 
+      <CoachingPanel />
+
       <div class="panel">
         <h2>预约确认</h2>
         <el-timeline>
@@ -89,6 +91,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 import AppHeader from '../components/AppHeader.vue';
+import CoachingPanel from '../components/coaching/CoachingPanel.vue';
 import FeatureCard from '../components/FeatureCard.vue';
 import MetricCard from '../components/MetricCard.vue';
 import RadarChart from '../components/RadarChart.vue';

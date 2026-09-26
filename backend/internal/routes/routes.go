@@ -17,4 +17,10 @@ func Register(r *gin.Engine) {
 	api.GET("/reviews", controller.Reviews)
 	api.GET("/messages", controller.Messages)
 	api.GET("/profile", controller.Profile)
+
+	api.GET("/coaching/appointments", controller.CoachingAppointments)
+	api.POST("/coaching/appointments/:id/tasks", controller.AddCoachingTask)
+	api.POST("/coaching/tasks/:id/submit", controller.SubmitCoachingTask)
+	api.POST("/coaching/tasks/:id/review", controller.ReviewCoachingTask)
+	api.GET("/coaching/skillwall", controller.CoachingSkillWall)
 }

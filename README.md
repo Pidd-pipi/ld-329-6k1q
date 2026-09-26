@@ -22,6 +22,7 @@ docker compose up -d
 - 需求发布与浏览：按类别、校区、期望时间和响应数量查看求助需求。
 - 智能匹配推荐：展示互补技能、匹配度、共同可用时间和推荐理由。
 - 交换预约与确认：记录双方确认状态、时间、地点和协商议程。
+- 阶段陪练：已确认预约扩展为多任务陪练，导师布置练习任务，学员提交说明或作品链接，导师确认后任务完成；任务全部通过后预约自动结项并写入双方技能墙。支持导师驳回（必须说明原因）、学员修改后重新提交、等待处理时禁止重复提交、未结项预约追加任务、结项后历史不可改动，页面可切换导师/学员视角查看待办、驳回原因和结项状态。
 - 评价与信用体系：评分、文字评价、信用分和信用等级用于推荐权重。
 - 消息通知系统：会话未读红点、系统通知和预约提醒。
 - 个人主页与技能墙：历史交换、收到评价和 ECharts 技能雷达图。
@@ -91,6 +92,11 @@ go run ./cmd/server
 - `GET /api/reviews`
 - `GET /api/messages`
 - `GET /api/profile`
+- `GET /api/coaching/appointments?user=<姓名>&role=mentor|learner`
+- `POST /api/coaching/appointments/:id/tasks`（导师追加练习任务）
+- `POST /api/coaching/tasks/:id/submit`（学员提交说明或作品链接）
+- `POST /api/coaching/tasks/:id/review`（导师确认通过或驳回，驳回需说明原因）
+- `GET /api/coaching/skillwall?user=<姓名>`（结项写入的技能墙记录）
 
 ## 环境变量说明
 
