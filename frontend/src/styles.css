@@ -19,8 +19,32 @@ body { margin: 0; background: #f6f7f9; color: #18212f; font-family: Inter, "Ping
 .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
 .profile-panel { display: grid; grid-template-columns: minmax(0, 1fr) 320px; align-items: center; gap: 16px; }
 .radar-chart { width: 100%; height: 280px; }
+.app-nav { display: flex; justify-content: center; padding: 16px 0 0; }
+.perspective-bar { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; padding: 16px 20px; margin-bottom: 18px; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; }
+.perspective-bar__field { display: flex; align-items: center; gap: 8px; color: #667085; }
+.perspective-bar > :last-child { margin-left: auto; }
+.coaching-error { margin-bottom: 16px; }
+.coaching-grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 18px; align-items: start; }
+.coaching-grid__main { display: grid; gap: 18px; min-width: 0; }
+.todo-panel h2 { display: flex; align-items: center; gap: 10px; }
+.todo-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.todo-list li { display: flex; align-items: center; gap: 10px; }
+.session-card__head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.session-card__head h2 { margin: 0 0 6px; }
+.session-card__head p { margin: 0; }
+.session-card__progress { margin: 14px 0; display: grid; gap: 6px; color: #667085; }
+.session-card__footer { margin-top: 14px; }
+.task-item { border: 1px solid #e5e7eb; border-radius: 8px; padding: 14px; margin-top: 12px; display: grid; gap: 8px; }
+.task-item__head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.task-item__head + p { margin: 0; }
+.task-item__submission { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; background: #f6f7f9; border-radius: 6px; padding: 8px 12px; }
+.task-item__history :deep(.el-collapse-item__header) { font-size: 13px; color: #667085; }
+.task-item__actions { display: flex; align-items: center; gap: 10px; min-height: 24px; }
+.submit-dialog__reject { margin-bottom: 14px; }
+.review-dialog__submission { background: #f6f7f9; border-radius: 6px; padding: 10px 14px; margin-bottom: 14px; display: grid; gap: 6px; }
+.review-dialog__submission p { margin: 0; }
 @media (max-width: 900px) {
   .page-shell { padding: 16px; }
   .app-header, .profile-panel { grid-template-columns: 1fr; display: grid; }
-  .metrics-grid, .workspace-grid { grid-template-columns: 1fr; }
+  .metrics-grid, .workspace-grid, .coaching-grid { grid-template-columns: 1fr; }
 }

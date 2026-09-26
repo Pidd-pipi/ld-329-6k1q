@@ -1,6 +1,5 @@
+import { API_BASE } from '../constants/app.constants';
 import type { Overview } from '../types/domain';
-
-const API_BASE = '/api';
 
 export async function fetchOverview(): Promise<Overview> {
   const response = await fetch(`${API_BASE}/dashboard/overview`);
